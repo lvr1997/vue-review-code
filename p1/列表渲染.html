@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<ul>
+				<li v-for="(food, index) in foods">
+					<span>{{index}} -- {{food.id}}</span>
+					<span>{{food.name}}</span>
+					<span>{{food.price}}</span>
+				</li>
+			</ul>
+		</div>
+		<script type="text/javascript">
+			var app = new Vue({
+				el: '#app',
+				template: '',
+				data(){ //es6写法，意义相同，都为返回一个数据对象
+					return {
+						foods: [
+							{id: 1, name: '面包', price: '￥5.00'},
+							{id: 2, name: '三明治', price: '￥9.00'},
+							{id: 3, name: '炸鸡腿', price: '￥12.00'}
+						]
+					}
+				}
+				//等同于：
+				// data: function(){
+				// 	return {
+						
+				// 	}
+				// }
+			})
+		</script>
+	</body>
+</html>

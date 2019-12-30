@@ -4,22 +4,28 @@
 		<meta charset="utf-8">
 		<title></title>
 		<script src="../js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<style>
+			.box {
+				background-color: #FF0000;
+				width: 200px;
+				height: 200px;
+			}
+			.active {
+				background-color: #FFFF00;
+			}
+		</style>
 	</head>
 	<body>
 		<div id="app">
-			<p v-if="status">Do everything...</p>
-			<p v-else>Nothing to show.</p>
-			
-			<span v-show="showMe">我就在这里了</span>
+			<div class="box" v-bind:class="{active:isActive}">
+				我是内容
+			</div>
 		</div>
-		
 		<script type="text/javascript">
 			var app = new Vue({
-				el:'#app',
-				template:'',
-				data:{
-					status: true,
-					showMe: true
+				el: "#app",
+				data: {
+					isActive: false
 				}
 			})
 		</script>

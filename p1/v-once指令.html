@@ -7,19 +7,13 @@
 	</head>
 	<body>
 		<div id="app">
-			<p v-if="status">Do everything...</p>
-			<p v-else>Nothing to show.</p>
-			
-			<span v-show="showMe">我就在这里了</span>
+			<p v-once>{{ msg }}</p>
 		</div>
-		
 		<script type="text/javascript">
 			var app = new Vue({
-				el:'#app',
-				template:'',
-				data:{
-					status: true,
-					showMe: true
+				el: '#app',
+				data: {
+					msg: "你好"
 				}
 			})
 		</script>

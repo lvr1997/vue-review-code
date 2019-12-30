@@ -6,27 +6,27 @@ vue知识点回顾
 
 - [x] 模板语法
 
+- [x] v-text
+
+- [x] v-html
+
+- [x] v-once
+
+- [ ] v-bind
+
 - [x] 条件渲染
 
 - [x] v-if
 
 - [x] v-else
 
-- [ ] v-else-if
+- [x] v-else-if
 
-- [ ] v-for
+- [x] v-show
 
-- [ ] v-show
+- [x] v-if vs v-show
 
-- [ ] v-if vs v-show
-
-- [ ] v-text
-
-- [ ] v-html
-
-- [ ] v-once
-
-- [ ] v-bind
+- [x] v-for
 
 - [ ] v-on
 

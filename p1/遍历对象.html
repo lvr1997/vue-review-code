@@ -7,19 +7,23 @@
 	</head>
 	<body>
 		<div id="app">
-			<p v-if="status">Do everything...</p>
-			<p v-else>Nothing to show.</p>
-			
-			<span v-show="showMe">我就在这里了</span>
+			<span v-for="(value, name, index) in student">
+				{{ index }} -- {{ name }} : {{ value }} <br>
+			</span>
 		</div>
 		
 		<script type="text/javascript">
 			var app = new Vue({
-				el:'#app',
-				template:'',
-				data:{
-					status: true,
-					showMe: true
+				el: '#app',
+				template: '',
+				data(){
+					return {
+						student: {
+							name: '小灰',
+							age: 18,
+							likes: "看书"
+						}
+					}
 				}
 			})
 		</script>

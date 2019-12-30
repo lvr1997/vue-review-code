@@ -7,10 +7,9 @@
 	</head>
 	<body>
 		<div id="app">
-			<p v-if="status">Do everything...</p>
-			<p v-else>Nothing to show.</p>
-			
-			<span v-show="showMe">我就在这里了</span>
+			<p v-if="status==0">男</p>
+			<p v-else-if="status==1">女</p>
+			<p v-else>未知</p>
 		</div>
 		
 		<script type="text/javascript">
@@ -18,8 +17,7 @@
 				el:'#app',
 				template:'',
 				data:{
-					status: true,
-					showMe: true
+					status: 0
 				}
 			})
 		</script>
