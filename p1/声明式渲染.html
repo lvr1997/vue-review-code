@@ -3,7 +3,21 @@
 	<head>
 		<meta charset="utf-8">
 		<title></title>
+		<script src="../js/vue.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 	<body>
+		<div id="app">
+			{{message}}
+		</div>
+		
+		<script type="text/javascript">
+			new Vue({
+				el:'#app',
+				template:'<div>新的模板{{ message }}</div>',
+				data:{
+					message: "您好！"
+				}
+			})
+		</script>
 	</body>
 </html>
