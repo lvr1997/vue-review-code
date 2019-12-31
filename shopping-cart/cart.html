@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="./cart.css"/>
+		<link rel="stylesheet" type="text/css" href="./reset.css"/>
+		<script src="../js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<cart></cart>
+			
+			<section class="model_bg"></section>
+			<section class="my_model">
+				<p class="title">删除宝贝<span class="closeModel">X</span></p>
+				<p>您确认要删除该宝贝吗？</p>
+				<div class="opBtn"><a href="javascript:;" class="dialog-sure">确定</a><a href="javascript:;" class="dialog-close">关闭</a></div>
+			</section>
+		</div>
+		<script type="text/javascript">
+			/**
+			 * 准备订单数据
+			 */
+			var orderId = parseInt(new Date().getTime()) + '';
+			var orders = [
+				{
+					'itemId':orderId, 
+					'goodInfo':'美的布谷电火锅锅家用多功能不粘一体电炒电热电煮锅韩式3-4-6人', 
+					'goodParams': ["颜色分类：白色", "尺寸：26寸"],
+					'price': 99,
+					'amount': 1,
+					'sum': 0
+				}
+			]
+			
+			/**
+			 * 购物车项组件
+			 */
+			var CartItem = {
+				template: `
+					<ul class="order_lists">
+						<li class="list_chk">
+							<input type="checkbox" id="checkbox_2" class="son_check">
+							<label for="checkbox_2"></label>
+						</li>
+						<li class="list_con">
+							<div class="list_img"><a href="javascript:;"><img src="img/good01.jpg" alt=""></a></div>
+							<div class="list_text"><a href="javascript:;">美的布谷电火锅锅家用多功能不粘一体电炒电热电煮锅韩式3-4-6人</a></div>
+						</li>
+						<li class="list_info">
+							<p>颜色分类：连体火锅</p>
+							<p>尺寸：26*26*10(cm)</p>
+						</li>
+						<li class="list_price">
+							<p class="price">￥99</p>
+						</li>
+						<li class="list_amount">
+							<div class="amount_box">
+								<a href="javascript:;" class="reduce reSty">-</a>
+								<input type="text" value="1" class="sum">
+								<a href="javascript:;" class="plus">+</a>
+							</div>
+						</li>
+						<li class="list_sum">
+							<p class="sum_price">￥980</p>
+						</li>
+						<li class="list_op">
+							<p class="del"><a href="javascript:;" class="delBtn">移除商品</a></p>
+						</li>
+					</ul>
+				`,
+				data(){
+					return {
+						itemId:orderId,
+						goodInfo:'', 
+						goodParams: [],
+						price: 0,
+						amount: 0,
+						sum: 0
+					}
+				}
+			}
+			
+			/**
+			 * 购物车组件
+			 */
+			Vue.component('cart',{
+				components: {
+					'cart-item': CartItem
+				},
+				template: `
+					<div class="cartMain">
+						<div class="cartMain_hd">
+							<ul class="order_lists cartTop">
+								<li class="list_chk">
+									<input type="checkbox" id="all" class="whole_check">
+									<label for="all"></label> 全选
+								</li>
+								<li class="list_con">商品信息</li>
+								<li class="list_info">商品参数</li>
+								<li class="list_price">单价</li>
+								<li class="list_amount">数量</li>
+								<li class="list_sum">金额</li>
+								<li class="list_op">操作</li>
+							</ul>
+						</div>
+				
+						<div class="cartBox">
+							<div class="order_content">
+								<cart-item></cart-item>
+							</div>
+						</div>
+						<div class="bar-wrapper">
+							<div class="bar-right">
+								<div class="piece">已选商品<strong class="piece_num">0</strong>件</div>
+								<div class="totalMoney">共计: <strong class="total_text">0.00</strong></div>
+								<div class="calBtn"><a href="javascript:;">结算</a></div>
+							</div>
+						</div>
+					</div>
+				`,
+				data(){
+					return {
+						orders: []
+					}
+				}
+			})
+			
+			/**
+			 * 入口
+			 */
+			var app = new Vue({
+				el: '#app',
+				data: function(){
+					return {
+						
+					}
+				}
+			})
+		</script>
+	</body>
+</html>
