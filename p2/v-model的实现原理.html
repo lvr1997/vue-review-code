@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<!-- v-model的实现原理 -->
+			<input type="text" v-on:input="fun"/>
+			<p v-bind:value="message">{{ message }}</p>
+		</div>
+		<script type="text/javascript">
+			new Vue({
+				el: '#app',
+				data: function(){
+					return {
+						message: ''
+					}
+					
+				},
+				methods: {
+					fun(e){ //这里的e指的是v-on绑定的事件对象
+						console.log(e.target) //事件绑定的DOM对象
+						// 更改data数据对象里面message的值
+						this.$data.message = e.target.value
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

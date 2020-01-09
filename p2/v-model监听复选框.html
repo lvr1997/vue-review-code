@@ -2,26 +2,21 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>综合实例--购物车</title>
-		<link rel="stylesheet" type="text/css" href="./cart.css"/>
+		<title></title>
 		<script src="../js/vue.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 	<body>
 		<div id="app">
-			
+			<input id="checkme" type="checkbox" v-model="checked" />
+			<label for="checkme">{{ checked }}</label>
 		</div>
+		
 		<script type="text/javascript">
-			
-			
-			
-			/**
-			 * 入口
-			 */
 			var app = new Vue({
 				el: '#app',
-				data: function(){
+				data(){
 					return {
-						
+						checked: true
 					}
 				}
 			})

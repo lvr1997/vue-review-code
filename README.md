@@ -12,7 +12,7 @@ vue知识点回顾
 
 - [x] v-once
 
-- [ ] v-bind
+- [x] v-bind
 
 - [x] 条件渲染
 
@@ -28,11 +28,11 @@ vue知识点回顾
 
 - [x] v-for
 
-- [ ] v-on
+- [x] v-on
 
-- [ ] 事件处理
+- [x] 事件处理
 
-- [ ] v-model
+- [x] v-model
 
 - [ ] 组件基础
 
